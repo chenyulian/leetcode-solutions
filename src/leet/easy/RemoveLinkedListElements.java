@@ -33,21 +33,38 @@ public class RemoveLinkedListElements {
         /**
          * 循环实现(使用虚拟头结点）
          */
-        ListNode dummyHead = new ListNode(-1);
-        dummyHead.next = head;
+//        ListNode dummyHead = new ListNode(-1);
+//        dummyHead.next = head;
+//
+//        ListNode prev = dummyHead;
+//        while(prev.next != null) {
+//            if(prev.next.val == val) {
+//                prev.next = prev.next.next;
+//            }else{
+//                prev = prev.next;
+//            }
+//        }
 
-        ListNode prev = dummyHead;
-        while(prev.next != null) {
-            if(prev.next.val == val) {
-                prev.next = prev.next.next;
-            }else{
-                prev = prev.next;
-            }
-        }
-
-        return dummyHead.next;
+//        return dummyHead.next;
         /**
          * 循环实现(使用虚拟头结点） 结束
+         */
+
+        /**
+         * 递归实现
+         */
+
+        //递归终止条件
+        if(head == null) {
+            return null;
+        }
+
+        //基本问题
+        head.next = removeElements(head.next, val);
+        return head.val == val ? head.next:head;
+
+        /**
+         * 递归实现 结束
          */
 
     }
