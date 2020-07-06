@@ -69,6 +69,7 @@ public class RemoveLinkedListElements {
 
     }
 
+
     public static void main(String[] args) {
         int[] nums = {6, 1, 2, 6, 3, 4, 5, 6};
         ListNode node = new ListNode(nums);
